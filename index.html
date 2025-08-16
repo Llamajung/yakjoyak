@@ -3,27 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>이약저약 - 공식 홈페이지</title>
+  <title>yakjoyak - 함께하는 일상</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      text-align: center;
+    }
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 20px;
+    }
+    header img {
+      height: 60px;
+    }
+    .app {
+      background: white;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 500px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .app img.logo {
+      height: 80px;
+      margin-bottom: 10px;
+    }
+    .buttons {
+      margin-top: 15px;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 5px;
+    }
+    .buttons img {
+      height: 50px;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 10px;
+      color: #777;
+    }
+  </style>
 </head>
-<body style="font-family:sans-serif; text-align:center; margin:50px;">
-  <h1>이약저약 (YAKJOYAK)</h1>
-  <p>대용량 식재료를 반으로 나누는 똑똑한 앱</p>
+<body>
+  <header>
+    <img src="assets/company_logo.png" alt="yakjoyak 로고">
+    <h1>yakjoyak</h1>
+    <p>함께하는 일상, 더 나은 선택</p>
+  </header>
 
-  <p>
-    <a href="https://play.google.com/store/apps/details?id=your.app.id">
-      <img src="https://play.google.com/intl/en_us/badges/images/generic/ko_badge_web_generic.png" alt="Google Play에서 다운로드" height="60">
-    </a>
-  </p>
+  <!-- 앱 1: 반반 -->
+  <section class="app">
+    <img src="assets/banban_logo.png" alt="반반 로고" class="logo">
+    <h2>반반 - 함께 장보기</h2>
+    <p>대용량 제품을 나눠 사서 돈도 아끼고, 음식 낭비도 줄여요.</p>
+    <div class="buttons">
+      <a href="https://play.google.com/store/apps/details?id=YOUR_BANBAN_APP_ID">
+        <img src="assets/googleplay.png" alt="Google Play에서 다운로드">
+      </a>
+      <a href="https://apps.apple.com/app/idYOUR_BANBAN_APP_ID">
+        <img src="assets/appstore.png" alt="App Store에서 다운로드">
+      </a>
+    </div>
+    <p><a href="privacy/banban.html">개인정보처리방침</a></p>
+  </section>
 
-  <p>
-    <a href="https://apps.apple.com/app/id0000000000">
-      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store에서 다운로드" height="60">
-    </a>
-  </p>
+  <!-- 앱 2: 뭐해먹지 -->
+  <section class="app">
+    <img src="assets/mohaemukji_logo.png" alt="뭐해먹지 로고" class="logo">
+    <h2>뭐해먹지</h2>
+    <p>냉장고 속 재료로 만들 수 있는 레시피를 추천받아보세요.</p>
+    <div class="buttons">
+      <a href="https://play.google.com/store/apps/details?id=YOUR_MOHAEMUKJI_APP_ID">
+        <img src="assets/googleplay.png" alt="Google Play에서 다운로드">
+      </a>
+      <a href="https://apps.apple.com/app/idYOUR_MOHAEMUKJI_APP_ID">
+        <img src="assets/appstore.png" alt="App Store에서 다운로드">
+      </a>
+    </div>
+    <p><a href="privacy/mohaemukji.html">개인정보처리방침</a></p>
+  </section>
 
-  <footer style="margin-top:50px; font-size:14px; color:#555;">
-    <p><a href="/privacy.html">개인정보 처리방침</a> | <a href="/terms.html">이용약관</a></p>
-    <p>문의: contact@yakjoyak.com</p>
+  <footer>
+    © 2025 yakjoyak. All rights reserved.
   </footer>
 </body>
 </html>
