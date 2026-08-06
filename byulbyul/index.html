@@ -15,6 +15,11 @@
     content="20가지 이상의 놀이로 자음과 모음을 익히는 유아 한글 학습 앱, 별별한글"
   />
 
+  <!-- 별별한글 앱 아이콘 -->
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <link rel="apple-touch-icon" href="assets/icon.png" />
+
+  <!-- SNS 공유 정보 -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="별별한글 | 게임으로 배우는 한글" />
 
@@ -23,7 +28,7 @@
     content="짧고 재미있는 놀이를 반복하며 한글을 자연스럽게 익혀요."
   />
 
-  <meta property="og:image" content="assets/screen-2.png" />
+  <meta property="og:image" content="assets/icon.png" />
 
   <title>별별한글 | 게임으로 배우는 한글</title>
 
@@ -104,6 +109,10 @@
       margin-inline: auto;
     }
 
+    /* =========================
+       상단 메뉴
+    ========================= */
+
     .topbar {
       position: sticky;
       top: 0;
@@ -138,22 +147,19 @@
       font-size: 20px;
     }
 
-    .brand-mark {
-      width: 42px;
-      height: 42px;
+    /* 기존 초록색 별 아이콘 대신 icon.png 사용 */
+    .brand-icon {
+      width: 46px;
+      height: 46px;
 
-      border-radius: 14px;
+      flex-shrink: 0;
 
-      display: grid;
-      place-items: center;
+      object-fit: cover;
 
-      background: linear-gradient(145deg, #54d6aa, #25a979);
+      border-radius: 13px;
 
       box-shadow:
-        0 10px 24px rgba(37, 169, 121, 0.25);
-
-      color: white;
-      font-size: 24px;
+        0 8px 20px rgba(23, 52, 45, 0.18);
     }
 
     .nav-links {
@@ -178,6 +184,10 @@
       color: var(--mint-dark);
       background: rgba(57, 184, 141, 0.08);
     }
+
+    /* =========================
+       첫 화면
+    ========================= */
 
     .hero {
       position: relative;
@@ -311,6 +321,10 @@
         0 8px 22px rgba(24, 84, 67, 0.06);
     }
 
+    /* =========================
+       스토어 버튼
+    ========================= */
+
     .store-row {
       display: flex;
       flex-wrap: wrap;
@@ -339,6 +353,10 @@
       max-width: 90%;
       max-height: 70%;
     }
+
+    /* =========================
+       휴대폰 이미지
+    ========================= */
 
     .hero-visual {
       position: relative;
@@ -425,9 +443,7 @@
 
       background: rgba(255, 255, 255, 0.94);
 
-      border:
-        1px solid rgba(255, 255, 255, 0.85);
-
+      border: 1px solid rgba(255, 255, 255, 0.85);
       border-radius: 18px;
 
       box-shadow: var(--shadow);
@@ -451,6 +467,10 @@
 
       transform: rotate(5deg);
     }
+
+    /* =========================
+       공통 섹션
+    ========================= */
 
     .section {
       padding: 92px 0;
@@ -493,6 +513,10 @@
       word-break: keep-all;
     }
 
+    /* =========================
+       특징 카드
+    ========================= */
+
     .feature-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -505,9 +529,7 @@
 
       background: var(--card);
 
-      border:
-        1px solid rgba(255, 255, 255, 0.8);
-
+      border: 1px solid rgba(255, 255, 255, 0.8);
       border-radius: var(--radius-lg);
 
       box-shadow:
@@ -546,6 +568,10 @@
 
       word-break: keep-all;
     }
+
+    /* =========================
+       놀이 화면 캐러셀
+    ========================= */
 
     .games {
       background:
@@ -705,9 +731,7 @@
     }
 
     .carousel-btn:focus-visible {
-      outline:
-        4px solid rgba(255, 206, 63, 0.7);
-
+      outline: 4px solid rgba(255, 206, 63, 0.7);
       outline-offset: 3px;
     }
 
@@ -741,6 +765,10 @@
       box-shadow:
         0 8px 20px rgba(19, 88, 68, 0.08);
     }
+
+    /* =========================
+       다운로드 영역
+    ========================= */
 
     .download-card {
       position: relative;
@@ -831,8 +859,12 @@
       font-size: 13px;
     }
 
+    /* =========================
+       개인정보처리방침
+    ========================= */
+
     .privacy {
-      padding: 34px 0 10px;
+      padding: 34px 0 14px;
 
       text-align: center;
 
@@ -850,15 +882,125 @@
       color: var(--mint-dark);
     }
 
-    footer {
-      padding: 24px 20px 42px;
+    /* =========================
+       사업자 정보
+    ========================= */
 
-      text-align: center;
+    .business-section {
+      padding: 38px 0 42px;
 
-      color: #789087;
+      background: #f3f7f5;
+
+      border-top:
+        1px solid rgba(23, 52, 45, 0.08);
+    }
+
+    .business-info {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      gap: 36px;
+    }
+
+    .business-brand {
+      display: flex;
+      align-items: center;
+
+      gap: 13px;
+
+      flex-shrink: 0;
+    }
+
+    .business-icon {
+      width: 50px;
+      height: 50px;
+
+      object-fit: cover;
+
+      border-radius: 14px;
+
+      box-shadow:
+        0 8px 20px rgba(23, 52, 45, 0.14);
+    }
+
+    .business-title {
+      margin: 0;
+
+      color: var(--ink);
+
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .business-subtitle {
+      margin: 4px 0 0;
+
+      color: var(--muted);
 
       font-size: 13px;
     }
+
+    .business-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+
+      gap: 7px 18px;
+
+      max-width: 760px;
+
+      color: #63776f;
+
+      font-size: 13px;
+      line-height: 1.65;
+
+      word-break: keep-all;
+    }
+
+    .business-details span {
+      position: relative;
+    }
+
+    .business-details span:not(:last-child)::after {
+      content: "";
+
+      position: absolute;
+
+      top: 50%;
+      right: -10px;
+
+      width: 1px;
+      height: 12px;
+
+      background: rgba(23, 52, 45, 0.16);
+
+      transform: translateY(-50%);
+    }
+
+    .business-details strong {
+      margin-right: 5px;
+
+      color: #40564e;
+
+      font-weight: 800;
+    }
+
+    footer {
+      padding: 20px 20px 28px;
+
+      text-align: center;
+
+      background: #f3f7f5;
+      color: #789087;
+
+      font-size: 12px;
+    }
+
+    /* =========================
+       태블릿
+    ========================= */
 
     @media (max-width: 920px) {
       .hero {
@@ -902,7 +1044,19 @@
       .carousel-btn.next {
         right: -8px;
       }
+
+      .business-info {
+        flex-direction: column;
+      }
+
+      .business-details {
+        justify-content: flex-start;
+      }
     }
+
+    /* =========================
+       모바일
+    ========================= */
 
     @media (max-width: 620px) {
       .wrap {
@@ -911,6 +1065,13 @@
 
       .nav {
         height: 64px;
+      }
+
+      .brand-icon {
+        width: 42px;
+        height: 42px;
+
+        border-radius: 12px;
       }
 
       .nav-links a:not(.download-nav) {
@@ -981,11 +1142,7 @@
       .showcase {
         gap: 14px;
 
-        padding:
-          10px
-          12px
-          28px;
-
+        padding: 10px 12px 28px;
         margin-inline: -12px;
 
         scroll-padding-inline: 12px;
@@ -1036,15 +1193,46 @@
         width: 100%;
 
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0, 1fr)
-          );
+          repeat(2, minmax(0, 1fr));
       }
 
       .qr-card img {
         width: 100%;
         height: auto;
+      }
+
+      .privacy {
+        display: flex;
+        flex-direction: column;
+
+        gap: 8px;
+      }
+
+      .privacy span {
+        display: none;
+      }
+
+      .business-section {
+        padding: 32px 0 34px;
+      }
+
+      .business-info {
+        gap: 24px;
+      }
+
+      .business-details {
+        display: block;
+
+        font-size: 12px;
+        line-height: 1.8;
+      }
+
+      .business-details span {
+        display: block;
+      }
+
+      .business-details span:not(:last-child)::after {
+        display: none;
       }
     }
 
@@ -1072,12 +1260,11 @@
         href="#top"
         aria-label="별별한글 처음으로"
       >
-        <span
-          class="brand-mark"
-          aria-hidden="true"
-        >
-          ★
-        </span>
+        <img
+          class="brand-icon"
+          src="assets/icon.png"
+          alt="별별한글 앱 아이콘"
+        />
 
         <span>별별한글</span>
       </a>
@@ -1105,6 +1292,7 @@
   </header>
 
   <main id="top">
+    <!-- 첫 화면 -->
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
@@ -1130,17 +1318,9 @@
             class="hero-points"
             aria-label="주요 특징"
           >
-            <span>
-              20가지 이상 놀이
-            </span>
-
-            <span>
-              하루 5분 학습
-            </span>
-
-            <span>
-              보고·듣고·따라쓰기
-            </span>
+            <span>20가지 이상 놀이</span>
+            <span>하루 5분 학습</span>
+            <span>보고·듣고·따라쓰기</span>
           </div>
 
           <div class="store-row">
@@ -1199,6 +1379,7 @@
       </div>
     </section>
 
+    <!-- 특징 -->
     <section
       class="section"
       id="features"
@@ -1231,14 +1412,11 @@
               🎲
             </div>
 
-            <h3>
-              지루할 틈 없는 구성
-            </h3>
+            <h3>지루할 틈 없는 구성</h3>
 
             <p>
-              미로, 낚시, 사과 받기,
-              버블 슈팅 등 다양한 방식으로
-              같은 글자를 반복해요.
+              미로, 낚시, 사과 받기, 버블 슈팅 등
+              다양한 방식으로 같은 글자를 반복해요.
             </p>
           </article>
 
@@ -1250,14 +1428,11 @@
               👂
             </div>
 
-            <h3>
-              보고 듣고 연결하기
-            </h3>
+            <h3>보고 듣고 연결하기</h3>
 
             <p>
               자음과 모음의 생김새뿐 아니라
-              정확한 소리까지 함께 익히도록
-              구성했어요.
+              정확한 소리까지 함께 익히도록 구성했어요.
             </p>
           </article>
 
@@ -1269,13 +1444,10 @@
               ✍️
             </div>
 
-            <h3>
-              쓰기까지 자연스럽게
-            </h3>
+            <h3>쓰기까지 자연스럽게</h3>
 
             <p>
-              놀이로 충분히 익힌 뒤
-              직접 따라 쓰며
+              놀이로 충분히 익힌 뒤 직접 따라 쓰며
               글자의 형태를 기억해요.
             </p>
           </article>
@@ -1283,6 +1455,7 @@
       </div>
     </section>
 
+    <!-- 놀이 화면 -->
     <section
       class="section games"
       id="games"
@@ -1290,7 +1463,7 @@
       <div class="wrap">
         <div class="section-head">
           <div class="kicker">
-            Play & Learn
+            Play &amp; Learn
           </div>
 
           <h2>
@@ -1299,8 +1472,7 @@
           </h2>
 
           <p>
-            단순 반복 대신
-            매번 다른 놀이를 만나
+            단순 반복 대신 매번 다른 놀이를 만나
             학습의 흐름을 오래 유지할 수 있어요.
           </p>
         </div>
@@ -1409,14 +1581,13 @@
           aria-hidden="true"
         >
           <span>←</span>
-
           옆으로 밀거나 화살표 버튼을 눌러보세요
-
           <span>→</span>
         </div>
       </div>
     </section>
 
+    <!-- 다운로드 -->
     <section
       class="section"
       id="download"
@@ -1431,8 +1602,7 @@
 
             <p>
               휴대폰 카메라로 QR 코드를 스캔하거나
-              스토어 버튼을 눌러
-              바로 다운로드할 수 있어요.
+              스토어 버튼을 눌러 바로 다운로드할 수 있어요.
             </p>
 
             <div
@@ -1482,9 +1652,7 @@
                 alt="Google Play QR 코드"
               />
 
-              <strong>
-                Google Play
-              </strong>
+              <strong>Google Play</strong>
             </a>
 
             <a
@@ -1498,9 +1666,7 @@
                 alt="App Store QR 코드"
               />
 
-              <strong>
-                App Store
-              </strong>
+              <strong>App Store</strong>
             </a>
           </div>
         </div>
@@ -1519,6 +1685,58 @@
       </div>
     </section>
   </main>
+
+  <!--
+    중요:
+    아래 사업자 정보는 광고계정에 등록된 정보와
+    완전히 동일하게 교체해야 합니다.
+  -->
+  <section
+    class="business-section"
+    aria-label="사업자 정보"
+  >
+    <div class="wrap business-info">
+      <div class="business-brand">
+        <img
+          class="business-icon"
+          src="assets/icon.png"
+          alt="별별한글 앱 아이콘"
+        />
+
+        <div>
+          <p class="business-title">
+            별별한글
+          </p>
+
+          <p class="business-subtitle">
+            게임으로 배우는 한글
+          </p>
+        </div>
+      </div>
+
+      <div class="business-details">
+        <span>
+          <strong>업체명</strong>
+          유한책임회사이약저약
+        </span>
+
+        <span>
+          <strong>대표자</strong>
+          정의영
+        </span>
+
+        <span>
+          <strong>사업자등록번호</strong>
+          871-87-02828
+        </span>
+
+        <span>
+          <strong>사업장 주소</strong>
+          충청남도 천안시 동남구 청수9로 47, 5층 55호
+        </span>
+      </div>
+    </div>
+  </section>
 
   <footer>
     © 2026 yakjoyak. All rights reserved.
