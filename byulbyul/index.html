@@ -231,23 +231,26 @@
       gap: 12px;
     }
 
-    .store-link{
-          width:210px;
-          height:72px;
-      
-          display:flex;
-          align-items:center;
-          justify-content:center;
-      
-          background:white;
-          border-radius:16px;
-          box-shadow:0 10px 20px rgba(0,0,0,.08);
-      }
-      
-      .store-badge{
-          max-width:90%;
-          max-height:70%;
-      }
+    .store-link {
+      width: 210px;
+      height: 72px;
+    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,.08);
+    
+      overflow: hidden;
+    }
+    
+    .store-badge {
+      width: 96%;
+      height: 88%;
+      object-fit: contain;
+    }
 
     .hero-visual {
       position: relative;
@@ -551,7 +554,6 @@
       .hero h1 { font-size: clamp(46px, 14vw, 66px); }
       .hero-copy { font-size: 17px; }
       .hero-points, .store-row { justify-content: center; }
-      .store-badge { height: 52px; }
 
       .hero-visual {
         min-height: 530px;
