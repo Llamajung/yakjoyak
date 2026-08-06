@@ -2,11 +2,14 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   />
+
   <meta name="theme-color" content="#39b88d" />
+
   <meta
     name="description"
     content="20가지 이상의 놀이로 자음과 모음을 익히는 유아 한글 학습 앱, 별별한글"
@@ -14,10 +17,12 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="별별한글 | 게임으로 배우는 한글" />
+
   <meta
     property="og:description"
     content="짧고 재미있는 놀이를 반복하며 한글을 자연스럽게 익혀요."
   />
+
   <meta property="og:image" content="assets/screen-2.png" />
 
   <title>별별한글 | 게임으로 배우는 한글</title>
@@ -50,6 +55,7 @@
     body {
       margin: 0;
       color: var(--ink);
+
       background:
         radial-gradient(
           circle at 10% 7%,
@@ -67,6 +73,7 @@
           #fffdf7 42%,
           #f7fff9 100%
         );
+
       font-family:
         Pretendard,
         "Noto Sans KR",
@@ -75,6 +82,7 @@
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
+
       overflow-x: hidden;
     }
 
@@ -87,6 +95,10 @@
       max-width: 100%;
     }
 
+    button {
+      font-family: inherit;
+    }
+
     .wrap {
       width: min(calc(100% - 36px), var(--max));
       margin-inline: auto;
@@ -96,17 +108,21 @@
       position: sticky;
       top: 0;
       z-index: 20;
+
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
+
       background: rgba(244, 255, 249, 0.82);
       border-bottom: 1px solid rgba(23, 52, 45, 0.07);
     }
 
     .nav {
       height: 72px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 18px;
     }
 
@@ -114,7 +130,9 @@
       display: inline-flex;
       align-items: center;
       gap: 11px;
+
       text-decoration: none;
+
       font-weight: 900;
       letter-spacing: -0.04em;
       font-size: 20px;
@@ -123,11 +141,17 @@
     .brand-mark {
       width: 42px;
       height: 42px;
+
       border-radius: 14px;
+
       display: grid;
       place-items: center;
+
       background: linear-gradient(145deg, #54d6aa, #25a979);
-      box-shadow: 0 10px 24px rgba(37, 169, 121, 0.25);
+
+      box-shadow:
+        0 10px 24px rgba(37, 169, 121, 0.25);
+
       color: white;
       font-size: 24px;
     }
@@ -140,9 +164,12 @@
 
     .nav-links a {
       text-decoration: none;
+
       font-size: 14px;
       font-weight: 800;
+
       color: var(--muted);
+
       padding: 10px 12px;
       border-radius: 12px;
     }
@@ -160,8 +187,10 @@
     .hero::before,
     .hero::after {
       content: "";
+
       position: absolute;
       border-radius: 999px;
+
       filter: blur(1px);
       z-index: -1;
     }
@@ -169,22 +198,27 @@
     .hero::before {
       width: 300px;
       height: 300px;
+
       right: -120px;
       top: 70px;
+
       background: rgba(255, 211, 75, 0.18);
     }
 
     .hero::after {
       width: 220px;
       height: 220px;
+
       left: -110px;
       bottom: 20px;
+
       background: rgba(69, 192, 255, 0.14);
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.03fr 0.97fr;
+
       align-items: center;
       gap: 64px;
     }
@@ -193,17 +227,22 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+
       padding: 8px 12px;
+      margin-bottom: 22px;
+
       border-radius: 999px;
+
       background: var(--mint-soft);
       color: var(--mint-dark);
+
       font-weight: 900;
       font-size: 14px;
-      margin-bottom: 22px;
     }
 
     .hero h1 {
       margin: 0;
+
       font-size: clamp(48px, 7vw, 84px);
       line-height: 0.98;
       letter-spacing: -0.07em;
@@ -211,66 +250,89 @@
     }
 
     .hero h1 .accent {
-      color: var(--mint-dark);
       position: relative;
+
+      color: var(--mint-dark);
       white-space: nowrap;
     }
 
     .hero h1 .accent::after {
       content: "";
+
       position: absolute;
       left: 0;
       right: 0;
       bottom: 0.04em;
+
       height: 0.15em;
+
       border-radius: 999px;
+
       background: rgba(255, 206, 63, 0.68);
+
       z-index: -1;
       transform: rotate(-1.5deg);
     }
 
     .hero-copy {
       margin: 26px 0 0;
+
+      max-width: 610px;
+
       font-size: clamp(18px, 2vw, 22px);
       line-height: 1.65;
+
       color: var(--muted);
-      max-width: 610px;
+
       word-break: keep-all;
     }
 
     .hero-points {
       display: flex;
       flex-wrap: wrap;
+
       gap: 10px;
+
       margin: 26px 0 30px;
     }
 
     .hero-points span {
       padding: 10px 14px;
+
       background: white;
+
       border: 1px solid var(--line);
       border-radius: 14px;
+
       font-size: 14px;
       font-weight: 850;
-      box-shadow: 0 8px 22px rgba(24, 84, 67, 0.06);
+
+      box-shadow:
+        0 8px 22px rgba(24, 84, 67, 0.06);
     }
 
     .store-row {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+
       gap: 12px;
     }
 
     .store-link {
       width: 210px;
       height: 72px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       background: white;
+
       border-radius: 16px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+
+      box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.08);
     }
 
     .store-badge {
@@ -280,42 +342,72 @@
 
     .hero-visual {
       position: relative;
+
       min-height: 660px;
+
       display: grid;
       place-items: center;
     }
 
     .blob {
       position: absolute;
+
       width: 86%;
       aspect-ratio: 1;
-      border-radius: 42% 58% 53% 47% / 46% 42% 58% 54%;
-      background: linear-gradient(145deg, #dff8ef, #aeead4);
+
+      border-radius:
+        42% 58% 53% 47% /
+        46% 42% 58% 54%;
+
+      background:
+        linear-gradient(
+          145deg,
+          #dff8ef,
+          #aeead4
+        );
+
       transform: rotate(-7deg);
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.65);
+
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.65);
     }
 
     .phone {
       position: relative;
+
       width: min(360px, 78vw);
-      border-radius: 46px;
+
       padding: 12px;
+
+      border-radius: 46px;
+
       background: #111;
-      box-shadow: 0 36px 80px rgba(9, 65, 48, 0.28);
+
+      box-shadow:
+        0 36px 80px rgba(9, 65, 48, 0.28);
+
       transform: rotate(3deg);
+
       z-index: 2;
     }
 
     .phone::before {
       content: "";
+
       position: absolute;
+
       top: 17px;
       left: 50%;
+
       width: 78px;
       height: 20px;
+
       transform: translateX(-50%);
+
       border-radius: 999px;
+
       background: #111;
+
       z-index: 3;
     }
 
@@ -326,25 +418,37 @@
 
     .floating-card {
       position: absolute;
+
       z-index: 4;
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid rgba(255, 255, 255, 0.85);
-      box-shadow: var(--shadow);
-      border-radius: 18px;
+
       padding: 14px 16px;
+
+      background: rgba(255, 255, 255, 0.94);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.85);
+
+      border-radius: 18px;
+
+      box-shadow: var(--shadow);
+
       font-weight: 900;
+
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
     .floating-card.one {
       left: 0;
       top: 150px;
+
       transform: rotate(-6deg);
     }
 
     .floating-card.two {
       right: 0;
       bottom: 120px;
+
       transform: rotate(5deg);
     }
 
@@ -353,21 +457,26 @@
     }
 
     .section-head {
-      text-align: center;
       max-width: 760px;
+
       margin: 0 auto 46px;
+
+      text-align: center;
     }
 
     .kicker {
       color: var(--mint-dark);
+
       font-weight: 950;
       font-size: 15px;
+
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
 
     .section h2 {
       margin: 10px 0 0;
+
       font-size: clamp(34px, 5vw, 56px);
       line-height: 1.12;
       letter-spacing: -0.055em;
@@ -375,71 +484,105 @@
 
     .section-head p {
       margin: 18px auto 0;
+
       color: var(--muted);
+
       font-size: 18px;
       line-height: 1.7;
+
       word-break: keep-all;
     }
 
     .feature-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+
       gap: 18px;
     }
 
     .feature {
-      background: var(--card);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      border-radius: var(--radius-lg);
       padding: 28px;
-      box-shadow: 0 18px 50px rgba(18, 92, 69, 0.08);
+
+      background: var(--card);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.8);
+
+      border-radius: var(--radius-lg);
+
+      box-shadow:
+        0 18px 50px rgba(18, 92, 69, 0.08);
     }
 
     .feature-icon {
       width: 54px;
       height: 54px;
+
       display: grid;
       place-items: center;
-      border-radius: 18px;
-      background: var(--mint-soft);
-      font-size: 28px;
+
       margin-bottom: 20px;
+
+      border-radius: 18px;
+
+      background: var(--mint-soft);
+
+      font-size: 28px;
     }
 
     .feature h3 {
-      font-size: 22px;
       margin: 0 0 10px;
+
+      font-size: 22px;
       letter-spacing: -0.035em;
     }
 
     .feature p {
       margin: 0;
+
       color: var(--muted);
+
       line-height: 1.65;
+
       word-break: keep-all;
     }
 
     .games {
-      background: linear-gradient(
-        180deg,
-        rgba(229, 250, 242, 0.8),
-        rgba(255, 255, 255, 0.35)
-      );
-      border-block: 1px solid rgba(23, 52, 45, 0.06);
+      background:
+        linear-gradient(
+          180deg,
+          rgba(229, 250, 242, 0.8),
+          rgba(255, 255, 255, 0.35)
+        );
+
+      border-block:
+        1px solid rgba(23, 52, 45, 0.06);
+    }
+
+    .showcase-wrap {
+      position: relative;
     }
 
     .showcase {
       display: flex;
       gap: 22px;
+
       overflow-x: auto;
       overflow-y: hidden;
+
       padding: 14px 18px 34px;
       margin-inline: -18px;
+
       scroll-snap-type: x mandatory;
       scroll-padding-inline: 18px;
+      scroll-behavior: smooth;
+
       -webkit-overflow-scrolling: touch;
+
       overscroll-behavior-x: contain;
+
       scrollbar-width: none;
+
       cursor: grab;
     }
 
@@ -453,13 +596,21 @@
 
     .shot {
       flex: 0 0 clamp(280px, 32vw, 360px);
+
       margin: 0;
       padding: 10px;
-      background: #fff;
+
+      background: white;
+
       border-radius: 30px;
-      box-shadow: 0 20px 55px rgba(19, 88, 68, 0.12);
+
+      box-shadow:
+        0 20px 55px rgba(19, 88, 68, 0.12);
+
       overflow: hidden;
+
       scroll-snap-align: start;
+
       transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
@@ -467,106 +618,226 @@
 
     .shot:hover {
       transform: translateY(-7px);
-      box-shadow: 0 28px 70px rgba(19, 88, 68, 0.18);
+
+      box-shadow:
+        0 28px 70px rgba(19, 88, 68, 0.18);
     }
 
     .shot img {
       width: 100%;
+
       aspect-ratio: 848 / 1788;
+
       object-fit: cover;
+
       border-radius: 22px;
+
       pointer-events: none;
+
       user-select: none;
+      -webkit-user-select: none;
       -webkit-user-drag: none;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+
+      z-index: 6;
+
+      width: 54px;
+      height: 54px;
+
+      display: grid;
+      place-items: center;
+
+      padding: 0;
+
+      border: 0;
+      border-radius: 999px;
+
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--ink);
+
+      font-size: 42px;
+      font-family: Arial, sans-serif;
+      line-height: 1;
+
+      box-shadow:
+        0 12px 32px rgba(19, 88, 68, 0.2);
+
+      cursor: pointer;
+
+      transform: translateY(-50%);
+
+      transition:
+        transform 0.18s ease,
+        opacity 0.18s ease,
+        box-shadow 0.18s ease;
+    }
+
+    .carousel-btn:hover:not(:disabled) {
+      transform:
+        translateY(-50%)
+        scale(1.08);
+
+      box-shadow:
+        0 16px 38px rgba(19, 88, 68, 0.26);
+    }
+
+    .carousel-btn:active:not(:disabled) {
+      transform:
+        translateY(-50%)
+        scale(0.96);
+    }
+
+    .carousel-btn.prev {
+      left: -27px;
+    }
+
+    .carousel-btn.next {
+      right: -27px;
+    }
+
+    .carousel-btn:disabled {
+      opacity: 0.25;
+      cursor: default;
+    }
+
+    .carousel-btn:focus-visible {
+      outline:
+        4px solid rgba(255, 206, 63, 0.7);
+
+      outline-offset: 3px;
     }
 
     .scroll-guide {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+
       gap: 8px;
+
       margin-top: 10px;
+
       color: var(--muted);
+
       font-size: 14px;
       font-weight: 800;
     }
 
     .scroll-guide span {
+      width: 28px;
+      height: 28px;
+
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 28px;
-      height: 28px;
+
       border-radius: 999px;
+
       background: white;
-      box-shadow: 0 8px 20px rgba(19, 88, 68, 0.08);
+
+      box-shadow:
+        0 8px 20px rgba(19, 88, 68, 0.08);
     }
 
     .download-card {
       position: relative;
+
       overflow: hidden;
+
       display: grid;
       grid-template-columns: 1fr auto;
+
       gap: 42px;
+
       align-items: center;
+
       padding: 46px;
+
       border-radius: var(--radius-xl);
+
       background:
         radial-gradient(
           circle at 85% 15%,
           rgba(255, 222, 95, 0.35),
           transparent 18rem
         ),
-        linear-gradient(135deg, #1fa87a, #48c99b);
+        linear-gradient(
+          135deg,
+          #1fa87a,
+          #48c99b
+        );
+
       color: white;
-      box-shadow: 0 30px 80px rgba(20, 116, 84, 0.24);
+
+      box-shadow:
+        0 30px 80px rgba(20, 116, 84, 0.24);
     }
 
     .download-card h2 {
       margin: 0;
+
       font-size: clamp(36px, 5vw, 58px);
       line-height: 1.08;
     }
 
     .download-card p {
       margin: 18px 0 0;
+
       max-width: 620px;
+
       font-size: 18px;
       line-height: 1.7;
+
       color: rgba(255, 255, 255, 0.9);
     }
 
     .qr-grid {
       display: grid;
       grid-template-columns: repeat(2, 150px);
+
       gap: 14px;
     }
 
     .qr-card {
+      padding: 12px;
+
       background: white;
       color: var(--ink);
-      padding: 12px;
+
       border-radius: 22px;
-      box-shadow: 0 16px 40px rgba(4, 59, 42, 0.18);
+
+      box-shadow:
+        0 16px 40px rgba(4, 59, 42, 0.18);
+
       text-align: center;
+      text-decoration: none;
     }
 
     .qr-card img {
       width: 126px;
       height: 126px;
+
       margin: 0 auto 8px;
+
       border-radius: 10px;
     }
 
     .qr-card strong {
       display: block;
+
       font-size: 13px;
     }
 
     .privacy {
       padding: 34px 0 10px;
+
       text-align: center;
+
       color: var(--muted);
+
       font-size: 14px;
     }
 
@@ -580,9 +851,12 @@
     }
 
     footer {
-      text-align: center;
       padding: 24px 20px 42px;
+
+      text-align: center;
+
       color: #789087;
+
       font-size: 13px;
     }
 
@@ -619,6 +893,14 @@
 
       .qr-grid {
         justify-content: center;
+      }
+
+      .carousel-btn.prev {
+        left: -8px;
+      }
+
+      .carousel-btn.next {
+        right: -8px;
       }
     }
 
@@ -698,14 +980,22 @@
 
       .showcase {
         gap: 14px;
-        padding: 10px 12px 28px;
+
+        padding:
+          10px
+          12px
+          28px;
+
         margin-inline: -12px;
+
         scroll-padding-inline: 12px;
       }
 
       .shot {
         flex: 0 0 min(78vw, 330px);
+
         padding: 7px;
+
         border-radius: 24px;
       }
 
@@ -713,19 +1003,43 @@
         border-radius: 18px;
       }
 
+      .carousel-btn {
+        width: 42px;
+        height: 42px;
+
+        font-size: 34px;
+
+        background: rgba(255, 255, 255, 0.93);
+      }
+
+      .carousel-btn.prev {
+        left: -2px;
+      }
+
+      .carousel-btn.next {
+        right: -2px;
+      }
+
       .scroll-guide {
         margin-top: 4px;
+
         font-size: 13px;
       }
 
       .download-card {
         padding: 32px 18px;
+
         border-radius: 26px;
       }
 
       .qr-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
         width: 100%;
+
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
       }
 
       .qr-card img {
@@ -744,6 +1058,7 @@
       *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
@@ -752,15 +1067,39 @@
 <body>
   <header class="topbar">
     <div class="wrap nav">
-      <a class="brand" href="#top" aria-label="별별한글 처음으로">
-        <span class="brand-mark" aria-hidden="true">★</span>
+      <a
+        class="brand"
+        href="#top"
+        aria-label="별별한글 처음으로"
+      >
+        <span
+          class="brand-mark"
+          aria-hidden="true"
+        >
+          ★
+        </span>
+
         <span>별별한글</span>
       </a>
 
-      <nav class="nav-links" aria-label="주요 메뉴">
-        <a href="#features">특징</a>
-        <a href="#games">놀이 보기</a>
-        <a class="download-nav" href="#download">다운로드</a>
+      <nav
+        class="nav-links"
+        aria-label="주요 메뉴"
+      >
+        <a href="#features">
+          특징
+        </a>
+
+        <a href="#games">
+          놀이 보기
+        </a>
+
+        <a
+          class="download-nav"
+          href="#download"
+        >
+          다운로드
+        </a>
       </nav>
     </div>
   </header>
@@ -769,22 +1108,39 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">⭐ 유아 한글 놀이 학습</div>
+          <div class="eyebrow">
+            ⭐ 유아 한글 놀이 학습
+          </div>
 
           <h1>
             놀다 보면<br />
-            <span class="accent">한글이 보여요</span>
+
+            <span class="accent">
+              한글이 보여요
+            </span>
           </h1>
 
           <p class="hero-copy">
-            자음과 모음을 외우기만 하는 대신, 사과를 받고 미로를 찾고
-            두더지를 잡으며 자연스럽게 글자를 익혀요.
+            자음과 모음을 외우기만 하는 대신,
+            사과를 받고 미로를 찾고 두더지를 잡으며
+            자연스럽게 글자를 익혀요.
           </p>
 
-          <div class="hero-points" aria-label="주요 특징">
-            <span>20가지 이상 놀이</span>
-            <span>하루 5분 학습</span>
-            <span>보고·듣고·따라쓰기</span>
+          <div
+            class="hero-points"
+            aria-label="주요 특징"
+          >
+            <span>
+              20가지 이상 놀이
+            </span>
+
+            <span>
+              하루 5분 학습
+            </span>
+
+            <span>
+              보고·듣고·따라쓰기
+            </span>
           </div>
 
           <div class="store-row">
@@ -816,10 +1172,22 @@
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="별별한글 앱 화면">
-          <div class="blob" aria-hidden="true"></div>
-          <div class="floating-card one">🎮 매번 다른 놀이</div>
-          <div class="floating-card two">🔊 글자 소리까지 또렷하게</div>
+        <div
+          class="hero-visual"
+          aria-label="별별한글 앱 화면"
+        >
+          <div
+            class="blob"
+            aria-hidden="true"
+          ></div>
+
+          <div class="floating-card one">
+            🎮 매번 다른 놀이
+          </div>
+
+          <div class="floating-card two">
+            🔊 글자 소리까지 또렷하게
+          </div>
 
           <div class="phone">
             <img
@@ -831,10 +1199,15 @@
       </div>
     </section>
 
-    <section class="section" id="features">
+    <section
+      class="section"
+      id="features"
+    >
       <div class="wrap">
         <div class="section-head">
-          <div class="kicker">Why Byulbyul</div>
+          <div class="kicker">
+            Why Byulbyul
+          </div>
 
           <h2>
             아이가 계속하고 싶어지는<br />
@@ -842,45 +1215,83 @@
           </h2>
 
           <p>
-            짧고 다양한 놀이를 반복하면서 글자의 모양과 소리를 연결하고,
-            마지막에는 직접 따라 쓰며 기억을 단단하게 만들어요.
+            짧고 다양한 놀이를 반복하면서
+            글자의 모양과 소리를 연결하고,
+            마지막에는 직접 따라 쓰며
+            기억을 단단하게 만들어요.
           </p>
         </div>
 
         <div class="feature-grid">
           <article class="feature">
-            <div class="feature-icon" aria-hidden="true">🎲</div>
-            <h3>지루할 틈 없는 구성</h3>
+            <div
+              class="feature-icon"
+              aria-hidden="true"
+            >
+              🎲
+            </div>
+
+            <h3>
+              지루할 틈 없는 구성
+            </h3>
+
             <p>
-              미로, 낚시, 사과 받기, 버블 슈팅 등 다양한 방식으로 같은
-              글자를 반복해요.
+              미로, 낚시, 사과 받기,
+              버블 슈팅 등 다양한 방식으로
+              같은 글자를 반복해요.
             </p>
           </article>
 
           <article class="feature">
-            <div class="feature-icon" aria-hidden="true">👂</div>
-            <h3>보고 듣고 연결하기</h3>
+            <div
+              class="feature-icon"
+              aria-hidden="true"
+            >
+              👂
+            </div>
+
+            <h3>
+              보고 듣고 연결하기
+            </h3>
+
             <p>
-              자음과 모음의 생김새뿐 아니라 정확한 소리까지 함께 익히도록
+              자음과 모음의 생김새뿐 아니라
+              정확한 소리까지 함께 익히도록
               구성했어요.
             </p>
           </article>
 
           <article class="feature">
-            <div class="feature-icon" aria-hidden="true">✍️</div>
-            <h3>쓰기까지 자연스럽게</h3>
+            <div
+              class="feature-icon"
+              aria-hidden="true"
+            >
+              ✍️
+            </div>
+
+            <h3>
+              쓰기까지 자연스럽게
+            </h3>
+
             <p>
-              놀이로 충분히 익힌 뒤 직접 따라 쓰며 글자의 형태를 기억해요.
+              놀이로 충분히 익힌 뒤
+              직접 따라 쓰며
+              글자의 형태를 기억해요.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section games" id="games">
+    <section
+      class="section games"
+      id="games"
+    >
       <div class="wrap">
         <div class="section-head">
-          <div class="kicker">Play & Learn</div>
+          <div class="kicker">
+            Play & Learn
+          </div>
 
           <h2>
             오늘은 어떤 놀이로<br />
@@ -888,98 +1299,128 @@
           </h2>
 
           <p>
-            단순 반복 대신 매번 다른 놀이를 만나 학습의 흐름을 오래
-            유지할 수 있어요.
+            단순 반복 대신
+            매번 다른 놀이를 만나
+            학습의 흐름을 오래 유지할 수 있어요.
           </p>
         </div>
 
-        <div
-          class="showcase"
-          aria-label="별별한글 놀이 화면"
-          tabindex="0"
-        >
-          <figure class="shot">
-            <img
-              loading="lazy"
-              src="assets/screen-1.png"
-              alt="버블 놀이 학습 화면"
-            />
-          </figure>
+        <div class="showcase-wrap">
+          <button
+            class="carousel-btn prev"
+            id="carouselPrev"
+            type="button"
+            aria-label="이전 놀이 화면 보기"
+          >
+            ‹
+          </button>
 
-          <figure class="shot">
-            <img
-              loading="lazy"
-              src="assets/screen-3.png"
-              alt="도둑 잡기 게임 화면"
-            />
-          </figure>
+          <div
+            class="showcase"
+            id="showcase"
+            aria-label="별별한글 놀이 화면"
+            tabindex="0"
+          >
+            <figure class="shot">
+              <img
+                loading="lazy"
+                src="assets/screen-1.png"
+                alt="버블 놀이 학습 화면"
+              />
+            </figure>
 
-          <figure class="shot">
-            <img
-              loading="lazy"
-              src="assets/screen-4.png"
-              alt="미로 찾기 게임 화면"
-            />
-          </figure>
+            <figure class="shot">
+              <img
+                loading="lazy"
+                src="assets/screen-3.png"
+                alt="도둑 잡기 게임 화면"
+              />
+            </figure>
 
-          <figure class="shot">
-            <img
-              loading="lazy"
-              src="assets/screen-5.png"
-              alt="낚시 게임 화면"
-            />
-          </figure>
+            <figure class="shot">
+              <img
+                loading="lazy"
+                src="assets/screen-4.png"
+                alt="미로 찾기 게임 화면"
+              />
+            </figure>
 
-          <figure class="shot">
-            <img
-              loading="lazy"
-              src="assets/screen-6.png"
-              alt="두더지 잡기 게임 화면"
-            />
-          </figure>
+            <figure class="shot">
+              <img
+                loading="lazy"
+                src="assets/screen-5.png"
+                alt="낚시 게임 화면"
+              />
+            </figure>
 
-          <figure class="shot">
-            <img
-              loading="lazy"
-              src="assets/screen-7.png"
-              alt="비슷한 글자 구별 게임 화면"
-            />
-          </figure>
+            <figure class="shot">
+              <img
+                loading="lazy"
+                src="assets/screen-6.png"
+                alt="두더지 잡기 게임 화면"
+              />
+            </figure>
 
-          <figure class="shot">
-            <img
-              loading="lazy"
-              src="assets/screen-8.png"
-              alt="버블 슈팅 게임 화면"
-            />
-          </figure>
+            <figure class="shot">
+              <img
+                loading="lazy"
+                src="assets/screen-7.png"
+                alt="비슷한 글자 구별 게임 화면"
+              />
+            </figure>
 
-          <figure class="shot">
-            <img
-              loading="lazy"
-              src="assets/screen-9.png"
-              alt="사과 받기 게임 화면"
-            />
-          </figure>
+            <figure class="shot">
+              <img
+                loading="lazy"
+                src="assets/screen-8.png"
+                alt="버블 슈팅 게임 화면"
+              />
+            </figure>
 
-          <figure class="shot">
-            <img
-              loading="lazy"
-              src="assets/screen-10.png"
-              alt="따라쓰기 화면"
-            />
-          </figure>
+            <figure class="shot">
+              <img
+                loading="lazy"
+                src="assets/screen-9.png"
+                alt="사과 받기 게임 화면"
+              />
+            </figure>
+
+            <figure class="shot">
+              <img
+                loading="lazy"
+                src="assets/screen-10.png"
+                alt="따라쓰기 화면"
+              />
+            </figure>
+          </div>
+
+          <button
+            class="carousel-btn next"
+            id="carouselNext"
+            type="button"
+            aria-label="다음 놀이 화면 보기"
+          >
+            ›
+          </button>
         </div>
 
-        <div class="scroll-guide" aria-hidden="true">
+        <div
+          class="scroll-guide"
+          aria-hidden="true"
+        >
           <span>←</span>
-          옆으로 밀어서 놀이 화면 보기
+
+          옆으로 밀거나 화살표 버튼을 눌러보세요
+
           <span>→</span>
         </div>
       </div>
     </section>
 
-    <section class="section" id="download">
+    <section
+      class="section"
+      id="download"
+    >
       <div class="wrap">
         <div class="download-card">
           <div>
@@ -989,11 +1430,15 @@
             </h2>
 
             <p>
-              휴대폰 카메라로 QR 코드를 스캔하거나 스토어 버튼을 눌러
+              휴대폰 카메라로 QR 코드를 스캔하거나
+              스토어 버튼을 눌러
               바로 다운로드할 수 있어요.
             </p>
 
-            <div class="store-row" style="margin-top: 24px">
+            <div
+              class="store-row"
+              style="margin-top: 24px"
+            >
               <a
                 class="store-link"
                 href="https://play.google.com/store/apps/details?id=com.woodenpharm.choseonggacha&pcampaignid=web_share"
@@ -1022,7 +1467,10 @@
             </div>
           </div>
 
-          <div class="qr-grid" aria-label="앱 다운로드 QR 코드">
+          <div
+            class="qr-grid"
+            aria-label="앱 다운로드 QR 코드"
+          >
             <a
               class="qr-card"
               href="https://play.google.com/store/apps/details?id=com.woodenpharm.choseonggacha&pcampaignid=web_share"
@@ -1033,7 +1481,10 @@
                 src="assets/qr-google-play.png"
                 alt="Google Play QR 코드"
               />
-              <strong>Google Play</strong>
+
+              <strong>
+                Google Play
+              </strong>
             </a>
 
             <a
@@ -1046,7 +1497,10 @@
                 src="assets/qr-app-store.png"
                 alt="App Store QR 코드"
               />
-              <strong>App Store</strong>
+
+              <strong>
+                App Store
+              </strong>
             </a>
           </div>
         </div>
@@ -1069,5 +1523,114 @@
   <footer>
     © 2026 yakjoyak. All rights reserved.
   </footer>
+
+  <script>
+    const showcase =
+      document.getElementById("showcase");
+
+    const prevButton =
+      document.getElementById("carouselPrev");
+
+    const nextButton =
+      document.getElementById("carouselNext");
+
+    function getScrollAmount() {
+      const firstShot =
+        showcase.querySelector(".shot");
+
+      if (!firstShot) {
+        return showcase.clientWidth * 0.8;
+      }
+
+      const showcaseStyle =
+        window.getComputedStyle(showcase);
+
+      const gap =
+        parseFloat(showcaseStyle.gap) || 0;
+
+      return (
+        firstShot.getBoundingClientRect().width +
+        gap
+      );
+    }
+
+    function updateCarouselButtons() {
+      const maxScrollLeft =
+        showcase.scrollWidth -
+        showcase.clientWidth;
+
+      const edgeTolerance = 4;
+
+      prevButton.disabled =
+        showcase.scrollLeft <= edgeTolerance;
+
+      nextButton.disabled =
+        showcase.scrollLeft >=
+        maxScrollLeft - edgeTolerance;
+    }
+
+    prevButton.addEventListener(
+      "click",
+      () => {
+        showcase.scrollBy({
+          left: -getScrollAmount(),
+          behavior: "smooth"
+        });
+      }
+    );
+
+    nextButton.addEventListener(
+      "click",
+      () => {
+        showcase.scrollBy({
+          left: getScrollAmount(),
+          behavior: "smooth"
+        });
+      }
+    );
+
+    showcase.addEventListener(
+      "scroll",
+      updateCarouselButtons,
+      {
+        passive: true
+      }
+    );
+
+    showcase.addEventListener(
+      "keydown",
+      event => {
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+
+          showcase.scrollBy({
+            left: -getScrollAmount(),
+            behavior: "smooth"
+          });
+        }
+
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+
+          showcase.scrollBy({
+            left: getScrollAmount(),
+            behavior: "smooth"
+          });
+        }
+      }
+    );
+
+    window.addEventListener(
+      "resize",
+      updateCarouselButtons
+    );
+
+    window.addEventListener(
+      "load",
+      updateCarouselButtons
+    );
+
+    updateCarouselButtons();
+  </script>
 </body>
 </html>
