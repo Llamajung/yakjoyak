@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#39b88d" />
+  <meta name="description" content="20가지 이상의 놀이로 자음과 모음을 익히는 유아 한글 학습 앱, 별별한글" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="별별한글 | 게임으로 배우는 한글" />
+  <meta property="og:description" content="짧고 재미있는 놀이를 반복하며 한글을 자연스럽게 익혀요." />
+  <meta property="og:image" content="assets/screen-2.png" />
+
+  <title>별별한글 | 게임으로 배우는 한글</title>
+
+  <style>
+    :root {
+      --mint: #39b88d;
+      --mint-dark: #168965;
+      --mint-soft: #e9fbf4;
+      --ink: #17342d;
+      --muted: #587169;
+      --cream: #fffdf7;
+      --card: rgba(255,255,255,.88);
+      --line: rgba(23,52,45,.10);
+      --shadow: 0 24px 70px rgba(19, 88, 68, .14);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--cream);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 7%, rgba(255, 221, 103, .22), transparent 24rem),
+        radial-gradient(circle at 95% 18%, rgba(78, 190, 255, .14), transparent 28rem),
+        linear-gradient(180deg, #f4fff9 0%, #fffdf7 42%, #f7fff9 100%);
+      font-family:
+        Pretendard, "Noto Sans KR", "Apple SD Gothic Neo",
+        -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .wrap {
+      width: min(calc(100% - 36px), var(--max));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(244, 255, 249, .82);
+      border-bottom: 1px solid rgba(23,52,45,.07);
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      font-size: 20px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #54d6aa, #25a979);
+      box-shadow: 0 10px 24px rgba(37,169,121,.25);
+      color: white;
+      font-size: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--muted);
+      padding: 10px 12px;
+      border-radius: 12px;
+    }
+
+    .nav-links a:hover {
+      color: var(--mint-dark);
+      background: rgba(57,184,141,.08);
+    }
+
+    .hero {
+      position: relative;
+      padding: 90px 0 74px;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(1px);
+      z-index: -1;
+    }
+
+    .hero::before {
+      width: 300px;
+      height: 300px;
+      right: -120px;
+      top: 70px;
+      background: rgba(255,211,75,.18);
+    }
+
+    .hero::after {
+      width: 220px;
+      height: 220px;
+      left: -110px;
+      bottom: 20px;
+      background: rgba(69,192,255,.14);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--mint-soft);
+      color: var(--mint-dark);
+      font-weight: 900;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(48px, 7vw, 84px);
+      line-height: .98;
+      letter-spacing: -.07em;
+      font-weight: 950;
+    }
+
+    .hero h1 .accent {
+      color: var(--mint-dark);
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .hero h1 .accent::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: .04em;
+      height: .15em;
+      border-radius: 999px;
+      background: rgba(255, 206, 63, .68);
+      z-index: -1;
+      transform: rotate(-1.5deg);
+    }
+
+    .hero-copy {
+      margin: 26px 0 0;
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 610px;
+      word-break: keep-all;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 26px 0 30px;
+    }
+
+    .hero-points span {
+      padding: 10px 14px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 850;
+      box-shadow: 0 8px 22px rgba(24,84,67,.06);
+    }
+
+    .store-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .store-badge {
+      height: 58px;
+      width: auto;
+      transition: transform .18s ease, filter .18s ease;
+    }
+
+    .store-link:hover .store-badge {
+      transform: translateY(-2px);
+      filter: drop-shadow(0 10px 14px rgba(23,52,45,.14));
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 660px;
+      display: grid;
+      place-items: center;
+    }
+
+    .blob {
+      position: absolute;
+      width: 86%;
+      aspect-ratio: 1;
+      border-radius: 42% 58% 53% 47% / 46% 42% 58% 54%;
+      background: linear-gradient(145deg, #dff8ef, #aeead4);
+      transform: rotate(-7deg);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.65);
+    }
+
+    .phone {
+      position: relative;
+      width: min(360px, 78vw);
+      border-radius: 46px;
+      padding: 12px;
+      background: #111;
+      box-shadow: 0 36px 80px rgba(9,65,48,.28);
+      transform: rotate(3deg);
+      z-index: 2;
+    }
+
+    .phone::before {
+      content: "";
+      position: absolute;
+      top: 17px;
+      left: 50%;
+      width: 78px;
+      height: 20px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: #111;
+      z-index: 3;
+    }
+
+    .phone img {
+      width: 100%;
+      border-radius: 35px;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 4;
+      background: rgba(255,255,255,.94);
+      border: 1px solid rgba(255,255,255,.85);
+      box-shadow: var(--shadow);
+      border-radius: 18px;
+      padding: 14px 16px;
+      font-weight: 900;
+      backdrop-filter: blur(12px);
+    }
+
+    .floating-card.one { left: 0; top: 150px; transform: rotate(-6deg); }
+    .floating-card.two { right: 0; bottom: 120px; transform: rotate(5deg); }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 46px;
+    }
+
+    .kicker {
+      color: var(--mint-dark);
+      font-weight: 950;
+      font-size: 15px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .section h2 {
+      margin: 10px 0 0;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.12;
+      letter-spacing: -.055em;
+    }
+
+    .section-head p {
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: 0 18px 50px rgba(18, 92, 69, .08);
+    }
+
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: var(--mint-soft);
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .feature h3 {
+      font-size: 22px;
+      margin: 0 0 10px;
+      letter-spacing: -.035em;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      word-break: keep-all;
+    }
+
+    .games {
+      background: linear-gradient(180deg, rgba(229,250,242,.8), rgba(255,255,255,.35));
+      border-block: 1px solid rgba(23,52,45,.06);
+    }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .shot {
+      background: #fff;
+      border-radius: 30px;
+      padding: 10px;
+      box-shadow: 0 20px 55px rgba(19, 88, 68, .12);
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .shot:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 28px 70px rgba(19,88,68,.18);
+    }
+
+    .shot img {
+      width: 100%;
+      border-radius: 22px;
+      aspect-ratio: 848 / 1788;
+      object-fit: cover;
+    }
+
+    .more-wrap {
+      text-align: center;
+      margin-top: 34px;
+    }
+
+    .more-btn {
+      border: 0;
+      background: var(--ink);
+      color: white;
+      font: inherit;
+      font-weight: 900;
+      padding: 14px 20px;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 12px 24px rgba(23,52,45,.15);
+    }
+
+    .more-btn:hover { transform: translateY(-1px); }
+
+    .hidden-shot { display: none; }
+    .showcase.expanded .hidden-shot { display: block; }
+
+    .download-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 42px;
+      align-items: center;
+      padding: 46px;
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at 85% 15%, rgba(255,222,95,.35), transparent 18rem),
+        linear-gradient(135deg, #1fa87a, #48c99b);
+      color: white;
+      box-shadow: 0 30px 80px rgba(20,116,84,.24);
+    }
+
+    .download-card h2 {
+      margin: 0;
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.08;
+    }
+
+    .download-card p {
+      margin: 18px 0 0;
+      max-width: 620px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: rgba(255,255,255,.9);
+    }
+
+    .qr-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 150px);
+      gap: 14px;
+    }
+
+    .qr-card {
+      background: white;
+      color: var(--ink);
+      padding: 12px;
+      border-radius: 22px;
+      box-shadow: 0 16px 40px rgba(4,59,42,.18);
+      text-align: center;
+    }
+
+    .qr-card img {
+      width: 126px;
+      height: 126px;
+      margin: 0 auto 8px;
+      border-radius: 10px;
+    }
+
+    .qr-card strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .privacy {
+      padding: 34px 0 10px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .privacy a {
+      margin: 0 8px;
+      text-decoration: none;
+    }
+
+    .privacy a:hover { color: var(--mint-dark); }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px 42px;
+      color: #789087;
+      font-size: 13px;
+    }
+
+    @media (max-width: 920px) {
+      .hero {
+        padding-top: 64px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      .hero-copy { max-width: 680px; }
+      .hero-visual { min-height: 620px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .showcase { grid-template-columns: repeat(2, 1fr); }
+
+      .download-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .download-card p { margin-inline: auto; }
+      .qr-grid { justify-content: center; }
+    }
+
+    @media (max-width: 620px) {
+      .wrap { width: min(calc(100% - 24px), var(--max)); }
+      .nav { height: 64px; }
+      .nav-links a:not(.download-nav) { display: none; }
+
+      .hero {
+        padding: 48px 0 48px;
+        text-align: center;
+      }
+
+      .eyebrow { margin-bottom: 18px; }
+      .hero h1 { font-size: clamp(46px, 14vw, 66px); }
+      .hero-copy { font-size: 17px; }
+      .hero-points, .store-row { justify-content: center; }
+      .store-badge { height: 52px; }
+
+      .hero-visual {
+        min-height: 530px;
+        margin-top: 10px;
+      }
+
+      .phone { width: min(320px, 84vw); }
+      .floating-card { font-size: 13px; }
+      .floating-card.one { left: 2px; top: 110px; }
+      .floating-card.two { right: 0; bottom: 78px; }
+
+      .section { padding: 70px 0; }
+      .section-head { margin-bottom: 32px; }
+      .section-head p { font-size: 16px; }
+      .showcase { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .shot { padding: 5px; border-radius: 17px; }
+      .shot img { border-radius: 13px; }
+
+      .download-card {
+        padding: 32px 18px;
+        border-radius: 26px;
+      }
+
+      .qr-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+      }
+
+      .qr-card img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="별별한글 처음으로">
+        <span class="brand-mark" aria-hidden="true">★</span>
+        <span>별별한글</span>
+      </a>
+
+      <nav class="nav-links" aria-label="주요 메뉴">
+        <a href="#features">특징</a>
+        <a href="#games">놀이 보기</a>
+        <a class="download-nav" href="#download">다운로드</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">⭐ 유아 한글 놀이 학습</div>
+          <h1>
+            놀다 보면<br />
+            <span class="accent">한글이 보여요</span>
+          </h1>
+
+          <p class="hero-copy">
+            자음과 모음을 외우기만 하는 대신, 사과를 받고 미로를 찾고
+            두더지를 잡으며 자연스럽게 글자를 익혀요.
+          </p>
+
+          <div class="hero-points" aria-label="주요 특징">
+            <span>20가지 이상 놀이</span>
+            <span>하루 5분 학습</span>
+            <span>보고·듣고·따라쓰기</span>
+          </div>
+
+          <div class="store-row">
+            <a class="store-link"
+               href="https://play.google.com/store/apps/details?id=com.woodenpharm.choseonggacha&pcampaignid=web_share"
+               target="_blank" rel="noopener noreferrer">
+              <img class="store-badge"
+                   src="https://play.google.com/intl/en_us/badges/images/generic/ko_badge_web_generic.png"
+                   alt="Google Play에서 다운로드" />
+            </a>
+
+            <a class="store-link"
+               href="https://apps.apple.com/kr/app/%EB%B3%84%EB%B3%84%ED%95%9C%EA%B8%80/id6758357123?l=en-GB"
+               target="_blank" rel="noopener noreferrer">
+              <img class="store-badge"
+                   src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                   alt="App Store에서 다운로드" />
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="별별한글 앱 화면">
+          <div class="blob" aria-hidden="true"></div>
+          <div class="floating-card one">🎮 매번 다른 놀이</div>
+          <div class="floating-card two">🔊 글자 소리까지 또렷하게</div>
+
+          <div class="phone">
+            <img src="assets/screen-2.png" alt="별별한글 카드 선택 화면" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Why Byulbyul</div>
+          <h2>아이가 계속하고 싶어지는<br />한글 학습</h2>
+          <p>
+            짧고 다양한 놀이를 반복하면서 글자의 모양과 소리를 연결하고,
+            마지막에는 직접 따라 쓰며 기억을 단단하게 만들어요.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">🎲</div>
+            <h3>지루할 틈 없는 구성</h3>
+            <p>미로, 낚시, 사과 받기, 버블 슈팅 등 다양한 방식으로 같은 글자를 반복해요.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">👂</div>
+            <h3>보고 듣고 연결하기</h3>
+            <p>자음과 모음의 생김새뿐 아니라 정확한 소리까지 함께 익히도록 구성했어요.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">✍️</div>
+            <h3>쓰기까지 자연스럽게</h3>
+            <p>놀이로 충분히 익힌 뒤 직접 따라 쓰며 글자의 형태를 기억해요.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section games" id="games">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Play & Learn</div>
+          <h2>오늘은 어떤 놀이로<br />한글을 만날까요?</h2>
+          <p>
+            단순 반복 대신 매번 다른 놀이를 만나 학습의 흐름을 오래 유지할 수 있어요.
+          </p>
+        </div>
+
+        <div class="showcase" id="showcase">
+          <figure class="shot"><img loading="lazy" src="assets/screen-1.png" alt="버블 놀이 학습 화면" /></figure>
+          <figure class="shot"><img loading="lazy" src="assets/screen-3.png" alt="도둑 잡기 게임 화면" /></figure>
+          <figure class="shot"><img loading="lazy" src="assets/screen-4.png" alt="미로 찾기 게임 화면" /></figure>
+          <figure class="shot"><img loading="lazy" src="assets/screen-5.png" alt="낚시 게임 화면" /></figure>
+          <figure class="shot"><img loading="lazy" src="assets/screen-6.png" alt="두더지 잡기 게임 화면" /></figure>
+          <figure class="shot"><img loading="lazy" src="assets/screen-8.png" alt="버블 슈팅 게임 화면" /></figure>
+
+          <figure class="shot hidden-shot"><img loading="lazy" src="assets/screen-7.png" alt="비슷한 글자 구별 게임 화면" /></figure>
+          <figure class="shot hidden-shot"><img loading="lazy" src="assets/screen-9.png" alt="사과 받기 게임 화면" /></figure>
+          <figure class="shot hidden-shot"><img loading="lazy" src="assets/screen-10.png" alt="따라쓰기 화면" /></figure>
+        </div>
+
+        <div class="more-wrap">
+          <button class="more-btn" id="moreBtn" type="button" aria-expanded="false">
+            놀이 화면 더 보기
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="download">
+      <div class="wrap">
+        <div class="download-card">
+          <div>
+            <h2>지금, 별별한글을<br />시작해 보세요</h2>
+            <p>
+              휴대폰 카메라로 QR 코드를 스캔하거나 스토어 버튼을 눌러
+              바로 다운로드할 수 있어요.
+            </p>
+
+            <div class="store-row" style="margin-top:24px;">
+              <a class="store-link"
+                 href="https://play.google.com/store/apps/details?id=com.woodenpharm.choseonggacha&pcampaignid=web_share"
+                 target="_blank" rel="noopener noreferrer">
+                <img class="store-badge"
+                     src="https://play.google.com/intl/en_us/badges/images/generic/ko_badge_web_generic.png"
+                     alt="Google Play에서 다운로드" />
+              </a>
+
+              <a class="store-link"
+                 href="https://apps.apple.com/kr/app/%EB%B3%84%EB%B3%84%ED%95%9C%EA%B8%80/id6758357123?l=en-GB"
+                 target="_blank" rel="noopener noreferrer">
+                <img class="store-badge"
+                     src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                     alt="App Store에서 다운로드" />
+              </a>
+            </div>
+          </div>
+
+          <div class="qr-grid" aria-label="앱 다운로드 QR 코드">
+            <a class="qr-card"
+               href="https://play.google.com/store/apps/details?id=com.woodenpharm.choseonggacha&pcampaignid=web_share"
+               target="_blank" rel="noopener noreferrer">
+              <img src="assets/qr-google-play.png" alt="Google Play QR 코드" />
+              <strong>Google Play</strong>
+            </a>
+
+            <a class="qr-card"
+               href="https://apps.apple.com/kr/app/%EB%B3%84%EB%B3%84%ED%95%9C%EA%B8%80/id6758357123?l=en-GB"
+               target="_blank" rel="noopener noreferrer">
+              <img src="assets/qr-app-store.png" alt="App Store QR 코드" />
+              <strong>App Store</strong>
+            </a>
+          </div>
+        </div>
+
+        <div class="privacy">
+          <a href="../privacy/byulbyul.html">개인정보처리방침 for Android</a>
+          <span>·</span>
+          <a href="../privacy/byulbyulIOS.html">개인정보처리방침 for iOS</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 yakjoyak. All rights reserved.
+  </footer>
+
+  <script>
+    const moreBtn = document.getElementById("moreBtn");
+    const showcase = document.getElementById("showcase");
+
+    moreBtn.addEventListener("click", () => {
+      const expanded = showcase.classList.toggle("expanded");
+      moreBtn.setAttribute("aria-expanded", String(expanded));
+      moreBtn.textContent = expanded ? "간단히 보기" : "놀이 화면 더 보기";
+    });
+  </script>
+</body>
+</html>
