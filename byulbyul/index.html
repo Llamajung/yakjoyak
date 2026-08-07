@@ -26,6 +26,14 @@
     gtag("event", "conversion", {
       send_to: "AW-16777652024/_d29CIfC9twcELj0msA-"
     });
+
+    // 스토어 클릭 추적
+    function trackStoreClick(store, position) {
+      gtag("event", "store_click", {
+        store: store,
+        position: position
+      });
+    }
   </script>
 
   <meta charset="UTF-8" />
@@ -36,8 +44,6 @@
   />
 
   <meta name="theme-color" content="#39b88d" />
-
-  
 
   <meta
     name="description"
@@ -138,10 +144,6 @@
       margin-inline: auto;
     }
 
-    /* =========================
-       상단 메뉴
-    ========================= */
-
     .topbar {
       position: sticky;
       top: 0;
@@ -176,7 +178,6 @@
       font-size: 20px;
     }
 
-    /* 기존 초록색 별 아이콘 대신 icon.png 사용 */
     .brand-icon {
       width: 46px;
       height: 46px;
@@ -213,10 +214,6 @@
       color: var(--mint-dark);
       background: rgba(57, 184, 141, 0.08);
     }
-
-    /* =========================
-       첫 화면
-    ========================= */
 
     .hero {
       position: relative;
@@ -350,10 +347,6 @@
         0 8px 22px rgba(24, 84, 67, 0.06);
     }
 
-    /* =========================
-       스토어 버튼
-    ========================= */
-
     .store-row {
       display: flex;
       flex-wrap: wrap;
@@ -382,10 +375,6 @@
       max-width: 90%;
       max-height: 70%;
     }
-
-    /* =========================
-       휴대폰 이미지
-    ========================= */
 
     .hero-visual {
       position: relative;
@@ -497,10 +486,6 @@
       transform: rotate(5deg);
     }
 
-    /* =========================
-       공통 섹션
-    ========================= */
-
     .section {
       padding: 92px 0;
     }
@@ -541,10 +526,6 @@
 
       word-break: keep-all;
     }
-
-    /* =========================
-       특징 카드
-    ========================= */
 
     .feature-grid {
       display: grid;
@@ -597,10 +578,6 @@
 
       word-break: keep-all;
     }
-
-    /* =========================
-       놀이 화면 캐러셀
-    ========================= */
 
     .games {
       background:
@@ -795,10 +772,6 @@
         0 8px 20px rgba(19, 88, 68, 0.08);
     }
 
-    /* =========================
-       다운로드 영역
-    ========================= */
-
     .download-card {
       position: relative;
 
@@ -888,10 +861,6 @@
       font-size: 13px;
     }
 
-    /* =========================
-       개인정보처리방침
-    ========================= */
-
     .privacy {
       padding: 34px 0 14px;
 
@@ -910,10 +879,6 @@
     .privacy a:hover {
       color: var(--mint-dark);
     }
-
-    /* =========================
-       사업자 정보
-    ========================= */
 
     .business-section {
       padding: 38px 0 42px;
@@ -1027,10 +992,6 @@
       font-size: 12px;
     }
 
-    /* =========================
-       태블릿
-    ========================= */
-
     @media (max-width: 920px) {
       .hero {
         padding-top: 64px;
@@ -1082,10 +1043,6 @@
         justify-content: flex-start;
       }
     }
-
-    /* =========================
-       모바일
-    ========================= */
 
     @media (max-width: 620px) {
       .wrap {
@@ -1302,26 +1259,14 @@
         class="nav-links"
         aria-label="주요 메뉴"
       >
-        <a href="#features">
-          특징
-        </a>
-
-        <a href="#games">
-          놀이 보기
-        </a>
-
-        <a
-          class="download-nav"
-          href="#download"
-        >
-          다운로드
-        </a>
+        <a href="#features">특징</a>
+        <a href="#games">놀이 보기</a>
+        <a class="download-nav" href="#download">다운로드</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
-    <!-- 첫 화면 -->
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
@@ -1331,10 +1276,7 @@
 
           <h1>
             놀다 보면<br />
-
-            <span class="accent">
-              한글이 보여요
-            </span>
+            <span class="accent">한글이 보여요</span>
           </h1>
 
           <p class="hero-copy">
@@ -1358,6 +1300,7 @@
               href="https://play.google.com/store/apps/details?id=com.woodenpharm.choseonggacha&pcampaignid=web_share"
               target="_blank"
               rel="noopener noreferrer"
+              onclick="trackStoreClick('google_play', 'hero')"
             >
               <img
                 class="store-badge"
@@ -1371,6 +1314,7 @@
               href="https://apps.apple.com/kr/app/%EB%B3%84%EB%B3%84%ED%95%9C%EA%B8%80/id6758357123?l=en-GB"
               target="_blank"
               rel="noopener noreferrer"
+              onclick="trackStoreClick('app_store', 'hero')"
             >
               <img
                 class="store-badge"
@@ -1408,7 +1352,6 @@
       </div>
     </section>
 
-    <!-- 특징 -->
     <section
       class="section"
       id="features"
@@ -1434,10 +1377,7 @@
 
         <div class="feature-grid">
           <article class="feature">
-            <div
-              class="feature-icon"
-              aria-hidden="true"
-            >
+            <div class="feature-icon" aria-hidden="true">
               🎲
             </div>
 
@@ -1450,10 +1390,7 @@
           </article>
 
           <article class="feature">
-            <div
-              class="feature-icon"
-              aria-hidden="true"
-            >
+            <div class="feature-icon" aria-hidden="true">
               👂
             </div>
 
@@ -1466,10 +1403,7 @@
           </article>
 
           <article class="feature">
-            <div
-              class="feature-icon"
-              aria-hidden="true"
-            >
+            <div class="feature-icon" aria-hidden="true">
               ✍️
             </div>
 
@@ -1484,7 +1418,6 @@
       </div>
     </section>
 
-    <!-- 놀이 화면 -->
     <section
       class="section games"
       id="games"
@@ -1523,75 +1456,39 @@
             tabindex="0"
           >
             <figure class="shot">
-              <img
-                loading="lazy"
-                src="assets/screen-1.png"
-                alt="버블 놀이 학습 화면"
-              />
+              <img loading="lazy" src="assets/screen-1.png" alt="버블 놀이 학습 화면" />
             </figure>
 
             <figure class="shot">
-              <img
-                loading="lazy"
-                src="assets/screen-3.png"
-                alt="도둑 잡기 게임 화면"
-              />
+              <img loading="lazy" src="assets/screen-3.png" alt="도둑 잡기 게임 화면" />
             </figure>
 
             <figure class="shot">
-              <img
-                loading="lazy"
-                src="assets/screen-4.png"
-                alt="미로 찾기 게임 화면"
-              />
+              <img loading="lazy" src="assets/screen-4.png" alt="미로 찾기 게임 화면" />
             </figure>
 
             <figure class="shot">
-              <img
-                loading="lazy"
-                src="assets/screen-5.png"
-                alt="낚시 게임 화면"
-              />
+              <img loading="lazy" src="assets/screen-5.png" alt="낚시 게임 화면" />
             </figure>
 
             <figure class="shot">
-              <img
-                loading="lazy"
-                src="assets/screen-6.png"
-                alt="두더지 잡기 게임 화면"
-              />
+              <img loading="lazy" src="assets/screen-6.png" alt="두더지 잡기 게임 화면" />
             </figure>
 
             <figure class="shot">
-              <img
-                loading="lazy"
-                src="assets/screen-7.png"
-                alt="비슷한 글자 구별 게임 화면"
-              />
+              <img loading="lazy" src="assets/screen-7.png" alt="비슷한 글자 구별 게임 화면" />
             </figure>
 
             <figure class="shot">
-              <img
-                loading="lazy"
-                src="assets/screen-8.png"
-                alt="버블 슈팅 게임 화면"
-              />
+              <img loading="lazy" src="assets/screen-8.png" alt="버블 슈팅 게임 화면" />
             </figure>
 
             <figure class="shot">
-              <img
-                loading="lazy"
-                src="assets/screen-9.png"
-                alt="사과 받기 게임 화면"
-              />
+              <img loading="lazy" src="assets/screen-9.png" alt="사과 받기 게임 화면" />
             </figure>
 
             <figure class="shot">
-              <img
-                loading="lazy"
-                src="assets/screen-10.png"
-                alt="따라쓰기 화면"
-              />
+              <img loading="lazy" src="assets/screen-10.png" alt="따라쓰기 화면" />
             </figure>
           </div>
 
@@ -1616,7 +1513,6 @@
       </div>
     </section>
 
-    <!-- 다운로드 -->
     <section
       class="section"
       id="download"
@@ -1643,6 +1539,7 @@
                 href="https://play.google.com/store/apps/details?id=com.woodenpharm.choseonggacha&pcampaignid=web_share"
                 target="_blank"
                 rel="noopener noreferrer"
+                onclick="trackStoreClick('google_play', 'bottom')"
               >
                 <img
                   class="store-badge"
@@ -1656,6 +1553,7 @@
                 href="https://apps.apple.com/kr/app/%EB%B3%84%EB%B3%84%ED%95%9C%EA%B8%80/id6758357123?l=en-GB"
                 target="_blank"
                 rel="noopener noreferrer"
+                onclick="trackStoreClick('app_store', 'bottom')"
               >
                 <img
                   class="store-badge"
@@ -1675,6 +1573,7 @@
               href="https://play.google.com/store/apps/details?id=com.woodenpharm.choseonggacha&pcampaignid=web_share"
               target="_blank"
               rel="noopener noreferrer"
+              onclick="trackStoreClick('google_play', 'qr')"
             >
               <img
                 src="assets/qr-google-play.png"
@@ -1689,6 +1588,7 @@
               href="https://apps.apple.com/kr/app/%EB%B3%84%EB%B3%84%ED%95%9C%EA%B8%80/id6758357123?l=en-GB"
               target="_blank"
               rel="noopener noreferrer"
+              onclick="trackStoreClick('app_store', 'qr')"
             >
               <img
                 src="assets/qr-app-store.png"
@@ -1715,11 +1615,6 @@
     </section>
   </main>
 
-  <!--
-    중요:
-    아래 사업자 정보는 광고계정에 등록된 정보와
-    완전히 동일하게 교체해야 합니다.
-  -->
   <section
     class="business-section"
     aria-label="사업자 정보"
