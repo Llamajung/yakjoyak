@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.gstatic.com; style-src 'self'; connect-src 'self' https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://www.googleapis.com https://asia-northeast3-choseonggacha.cloudfunctions.net; base-uri 'none'; form-action 'self'; object-src 'none'"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>단어 승인 관리</title><link rel="stylesheet" href="./style.css">
+</head>
+<body><main>
+<header><div><p class="eyebrow">별별한글 · 관리자</p><h1>단어 승인 관리</h1></div><button id="logout" hidden>로그아웃</button></header>
+<p>음성은 요청과 함께 준비됩니다. 내용을 검토한 뒤 승인해 주세요.</p>
+<form id="login"><h2>관리자 로그인</h2>
+<label>이메일<input id="email" type="email" autocomplete="username" required></label>
+<label>비밀번호<input id="password" type="password" autocomplete="current-password" required></label>
+<button type="submit" class="primary">로그인</button></form>
+<p id="message" role="status" aria-live="polite"></p>
+<button id="verify" hidden>이메일 인증 메일 보내기</button>
+<section id="dashboard" hidden>
+<div class="toolbar"><label>목록 <select id="filter"><option value="pending">승인 대기</option><option value="impossible">거절됨</option><option value="ready">승인됨</option></select></label><button id="refresh">새로고침</button></div>
+<div id="words" aria-live="polite"></div><button id="more" hidden>다음 50개</button>
+</section>
+</main><script type="module" src="./app.js"></script></body></html>
