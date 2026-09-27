@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.woodenpharm.choseonggacha",
+      "sha256_cert_fingerprints": [
+        "75:C3:F0:90:81:34:BD:40:BA:E0:1A:8B:F4:3F:FE:E2:BA:4A:55:2D:57:DF:0D:18:2B:D0:06:42:8B:D9:A3:82"
+      ]
+    }
+  }
+]
