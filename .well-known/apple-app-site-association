@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "2FHBYB4AC2.com.woodenpharm.choseonggacha"
+        ],
+        "components": [
+          {
+            "/": "/byulbyul/*",
+            "comment": "별별한글 Universal Links"
+          }
+        ]
+      }
+    ]
+  }
+}
