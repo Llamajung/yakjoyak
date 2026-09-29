@@ -376,6 +376,78 @@
       max-height: 70%;
     }
 
+    /* 유치원 / 어린이집 제휴 문의 */
+    .partnership-card {
+      width: 100%;
+      max-width: 432px;
+      margin-top: 22px;
+      padding: 20px 22px;
+      border: 1px solid rgba(22, 137, 101, 0.18);
+      border-radius: 20px;
+      background: var(--mint-soft);
+      color: var(--ink);
+      text-align: center;
+    }
+
+    .partnership-title {
+      margin: 0 0 10px;
+      color: var(--mint-dark);
+      font-size: 17px;
+      font-weight: 900;
+      line-height: 1.5;
+      letter-spacing: -0.035em;
+      word-break: keep-all;
+    }
+
+    .partnership-contact {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      width: fit-content;
+      margin-inline: auto;
+      justify-content: center;
+      max-width: 100%;
+      border-radius: 6px;
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.5;
+      text-decoration: none;
+    }
+
+    .partnership-contact span {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .partnership-contact:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .partnership-contact:focus-visible {
+      outline: 3px solid var(--mint-dark);
+      outline-offset: 4px;
+    }
+
+    .download-card .partnership-card {
+      background: #fffdf7;
+    }
+
+    @media (max-width: 920px) {
+      .download-card .partnership-card {
+        margin-inline: auto;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .partnership-card {
+        margin-inline: auto;
+        padding: 18px;
+      }
+    }
+
     .hero-visual {
       position: relative;
 
@@ -1323,6 +1395,18 @@
               />
             </a>
           </div>
+
+          <aside class="partnership-card" aria-labelledby="partnership-hero">
+            <h3 class="partnership-title" id="partnership-hero">
+              유치원 / 어린이집 무료 제휴 문의
+            </h3>
+            <a class="partnership-contact" href="tel:15442092">
+              <span>전화:</span> 1544 - 2092
+            </a>
+            <a class="partnership-contact" href="sms:01029265375">
+              <span>문자:</span> 010-2926-5375
+            </a>
+          </aside>
         </div>
 
         <div
@@ -1562,6 +1646,18 @@
                 />
               </a>
             </div>
+
+            <aside class="partnership-card" aria-labelledby="partnership-bottom">
+              <h3 class="partnership-title" id="partnership-bottom">
+                유치원 / 어린이집 무료 제휴 문의
+              </h3>
+              <a class="partnership-contact" href="tel:15442092">
+                <span>전화:</span> 1544 - 2092
+              </a>
+              <a class="partnership-contact" href="sms:01029265375">
+                <span>문자:</span> 010-2926-5375
+              </a>
+            </aside>
           </div>
 
           <div
