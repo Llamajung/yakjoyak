@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>별별한글 친구 3인 할인 초대</title>
+<style>body{margin:0;background:#f4f8ff;color:#303044;font:17px/1.7 system-ui,sans-serif}main{max-width:520px;margin:40px auto;padding:28px}h1{font-size:28px}section{background:white;border-radius:22px;padding:24px;margin:20px 0}a,button{display:block;background:#7653c5;color:white;border:0;border-radius:14px;padding:16px;margin:14px 0;text-align:center;text-decoration:none;font:inherit}small{display:block}#error{color:#a22}[hidden]{display:none!important}</style>
+<main><h1>별별한글 친구 할인에 초대받았어요</h1><section><p>나를 포함한 3명이 참여하면 24시간 동안 전체 이용권을 할인받아요. 결제하지 않아도 인원에 포함돼요.</p><p>이후 참여한 친구에게는 남은 할인 시간만 적용돼요.</p><p id="error" hidden>초대 링크가 올바르지 않아요. 친구에게 링크를 다시 받아 주세요.</p><button id="open" hidden>별별한글 앱에서 참여하기</button><p id="help" hidden>앱이 열리지 않으면 Safari 또는 Chrome에서 열거나, 단톡방의 초대 링크를 다시 눌러 주세요.</p></section>
+<section><h2>앱이 아직 없나요?</h2><a href="https://apps.apple.com/kr/app/id6758357123">App Store에서 설치</a><a href="https://play.google.com/store/apps/details?id=com.woodenpharm.choseonggacha">Google Play에서 설치</a><p><strong>설치 후 친구가 보낸 링크를 다시 눌러 주세요.</strong> 이 페이지로 돌아와 ‘앱에서 참여하기’를 눌러도 돼요.</p><small>앱 설치만으로는 참여가 완료되지 않아요. 앱에서 ‘친구 그룹에 참여하기’를 눌러 주세요. 새 그룹을 만들면 친구 그룹에 포함되지 않아요.</small></section></main>
+<script>
+const url = new URL(location.href);
+const ids = url.searchParams.getAll('group');
+// Never silently substitute a previously saved group for an invalid or missing invite.
+const id = ids.length === 1 && /^[A-Za-z0-9_-]{32}$/.test(ids[0]) ? ids[0] : null;
+if (!id) document.querySelector('#error').hidden = false;
+else {
+ try { localStorage.setItem('byulbyulInvite', id); } catch {}
+ const button = document.querySelector('#open'); button.hidden = false;
+ button.onclick = () => {
+  const link = 'https://yakjoyak.com/byulbyul/invite?group=' + encodeURIComponent(id);
+  document.querySelector('#help').hidden = false;
+  // Android Chrome can launch verified links via an explicit browser intent.
+  if (/Android/i.test(navigator.userAgent)) location.href = 'intent://yakjoyak.com/byulbyul/invite?group=' + encodeURIComponent(id) + '#Intent;scheme=https;package=com.woodenpharm.choseonggacha;S.browser_fallback_url=' + encodeURIComponent(link) + ';end';
+  else location.href = 'byulbyul://invite?group=' + encodeURIComponent(id);
+ };
+}
+</script></html>
